@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+    <property resource="bootstrap.properties"/>
+    <property resource="application.properties"/>
+    <!-- 定义日志文件名称 --> 
+    <property name="APP_NAME" value="${spring.application.name:-undefined}"/>
+
+    <property name="DAILY_FILE_PATH" value="/usr/zhidian/order-manage/log/${APP_NAME}"/>
+
+    <appender name="DAILY_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${DAILY_FILE_PATH}/${APP_NAME}.%d{yyyy-MM-dd}.log</fileNamePattern>    
+        </rollingPolicy>
+    </appender>
+
+    <!--项目日志-->
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="DAILY_FILE"/>
+    </root>
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="com.jarvis.cache" level="WARN"/>
+    <logger name="org.apache" level="WARN"/>
+    <logger name="org.mybatis" level="WARN"/>
+    <logger name="org.mongodb" level="WARN"/>
+    <logger name="com.netflix" level="WARN"/>
+    <logger name="sun.rmi" level="INFO"/>
+    <logger name="org.springboot.sample" level="TRACE"/>
+</configuration>

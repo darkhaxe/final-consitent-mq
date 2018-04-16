@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <groupId>com.zhidian</groupId>
+    <artifactId>final-consistent-mq-service</artifactId>
+    <version>0.0.1</version>
+
+    <modules>
+        <!--<module>order-api</module>-->
+        <!--<module>mobile-order-api</module>-->
+        <!--<module>order-dao</module>-->
+        <!--<module>order-core</module>-->
+        <!--<module>order-api-model</module>-->
+        <!--<module>order-manage-api</module>-->
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <autoload.cache>6.1</autoload.cache>
+        <spring.boot.version>1.4.2.RELEASE</spring.boot.version>
+        <swagger.version>2.5.0</swagger.version>
+        <cloud.payment.version>0.0.4</cloud.payment.version>
+        <cloud.common.version>0.1.15</cloud.common.version>
+        <inventory.version>0.1.9</inventory.version>
+        <member.version>0.0.4</member.version>
+        <search.version>0.0.2</search.version>
+        <commodity.version>0.0.1</commodity.version>
+        <promotion.version>0.0.2</promotion.version>
+        <passport.version>0.0.6</passport.version>
+        <logistics.version>0.0.1</logistics.version>
+        <message.version>0.0.1</message.version>
+        <zhidian.account.version>0.0.2</zhidian.account.version>
+        <spock-core-version>1.1-groovy-2.4</spock-core-version>
+        <groovy-version>2.4.12</groovy-version>
+        <cglib-nodep-version>3.2.5</cglib-nodep-version>
+        <objenesis-version>2.6</objenesis-version>
+        <zdsms.version>0.0.2</zdsms.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Camden.SR7</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <dependencies>
+
+        <!--spock测试依赖-->
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>${spock-core-version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>${groovy-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <version>${cglib-nodep-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.objenesis</groupId>
+            <artifactId>objenesis</artifactId>
+            <version>${objenesis-version}</version>
+        </dependency>
+        <!--spock测试依赖-->
+
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.38</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.zhidian.cloud</groupId>
+            <artifactId>cloud-common-config</artifactId>
+            <version>${cloud.common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zhidian.cloud</groupId>
+            <artifactId>cloud-common-core</artifactId>
+            <version>${cloud.common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zhidian.cloud</groupId>
+            <artifactId>cloud-common-utils</artifactId>
+            <version>${cloud.common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zhidian.cloud</groupId>
+            <artifactId>cloud-common-model</artifactId>
+            <version>${cloud.common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.qiujiayu</groupId>
+            <artifactId>autoload-cache</artifactId>
+            <version>${autoload.cache}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--指定jdk级别-->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-release</id>
+            <url>http://119.147.171.113:8002/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://119.147.171.113:8002/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>local-nexus</id>
+            <url>http://119.147.171.113:8002/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
+</project>
