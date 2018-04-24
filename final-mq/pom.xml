@@ -21,7 +21,6 @@
     </properties>
 
 
-
     <dependencies>
         <dependency>
             <groupId>ognl</groupId>
@@ -30,9 +29,9 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>com.zhidian</groupId>-->
-            <!--<artifactId>order-core</artifactId>-->
-            <!--<version>${project.version}</version>-->
+        <!--<groupId>com.zhidian</groupId>-->
+        <!--<artifactId>order-core</artifactId>-->
+        <!--<version>${project.version}</version>-->
         <!--</dependency>-->
 
 
@@ -78,6 +77,41 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+            <version>1.20</version>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>${mapper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>${modelmapper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dangdang</groupId>
+            <artifactId>elastic-job-lite-core</artifactId>
+            <version>${elastic-job}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -86,11 +120,11 @@
             <!--私人(你自己) 开发环境配置-->
             <!--<filter>../../zhidian-cloud-env/self.properties</filter>-->
             <!--开发环境配置-->
-            <!--<filter>../../zhidian-cloud-env/dev.properties</filter>-->
-            <!--<filter>../../zhidian-cloud-env/dev-interface.properties</filter>-->
+            <!--<filter>./zhidian-cloud-env/dev.properties</filter>-->
+            <filter>../zhidian-cloud-env/dev-interface.properties</filter>
             <!--公司113测试环境配置-->
             <!--<filter>../../zhidian-cloud-env/qa.properties</filter>-->
-            <filter>../../zhidian-cloud-env/release.properties</filter>
+            <!--<filter>../../zhidian-cloud-env/release.properties</filter>-->
             <!--公司仿真环境配置-->
             <!--<filter>../../zhidian-cloud-env/fangzhen.properties</filter>-->
         </filters>
