@@ -12,12 +12,6 @@
     <modules>
         <module>final-mq</module>
         <module>final-mq-sdk</module>
-        <!--<module>order-api</module>-->
-        <!--<module>mobile-order-api</module>-->
-        <!--<module>order-dao</module>-->
-        <!--<module>order-core</module>-->
-        <!--<module>order-api-model</module>-->
-        <!--<module>order-manage-api</module>-->
     </modules>
 
     <properties>
@@ -32,7 +26,6 @@
         <groovy-version>2.4.12</groovy-version>
         <objenesis-version>2.6</objenesis-version>
         <cglib-nodep-version>3.2.5</cglib-nodep-version>
-        <mapper.version>3.4.0</mapper.version>
         <modelmapper.version>1.1.2</modelmapper.version>
         <elastic-job>2.1.5</elastic-job>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>

@@ -17,7 +17,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>OrderManageApi</start-class>
+        <start-class>FinalConsistentMqApplication</start-class>
     </properties>
 
 
@@ -27,14 +27,6 @@
             <artifactId>ognl</artifactId>
             <version>3.1.12</version>
         </dependency>
-
-        <!--<dependency>-->
-        <!--<groupId>com.zhidian</groupId>-->
-        <!--<artifactId>order-core</artifactId>-->
-        <!--<version>${project.version}</version>-->
-        <!--</dependency>-->
-
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -54,6 +46,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!--数据库驱动-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.39</version>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -98,10 +97,19 @@
             <version>${mapper.version}</version>
         </dependency>
         <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper</artifactId>
             <version>${modelmapper.version}</version>
         </dependency>
+        <!--<dependency>-->
+        <!--<groupId>com.github.pagehelper</groupId>-->
+        <!--<artifactId>pagehelper-spring-boot-starter</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.dangdang</groupId>
             <artifactId>elastic-job-lite-core</artifactId>

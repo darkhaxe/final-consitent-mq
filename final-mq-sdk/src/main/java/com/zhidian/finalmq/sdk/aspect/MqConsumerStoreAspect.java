@@ -1,7 +1,7 @@
 package com.zhidian.finalmq.sdk.aspect;
 
-import com.paascloud.base.enums.ErrorCodeEnum;
-import com.paascloud.provider.exceptions.TpcBizException;
+import com.zhidian.finalmq.enums.ErrorCodeEnum;
+import com.zhidian.finalmq.exceptions.TpcBizException;
 import com.zhidian.finalmq.sdk.annotation.MqConsumerStore;
 import com.zhidian.finalmq.sdk.model.domain.MqMessageData;
 import com.zhidian.finalmq.sdk.model.enums.MqMessageTypeEnum;

@@ -46,8 +46,6 @@ public class TpcMqTagController extends BaseController {
 	public Wrapper<PageInfo<TpcMqTagVo>> queryTagListWithPage(@ApiParam(name = "tag", value = "角色信息") @RequestBody TpcMqTag tpcMqTag) {
 
 		logger.info("查询角色列表tpcMqTagQuery={}", tpcMqTag);
-		PageHelper.startPage(tpcMqTag.getPageNum(), tpcMqTag.getPageSize());
-		tpcMqTag.setOrderBy("update_time desc");
 		List<TpcMqTagVo> list = tpcMqTagService.listWithPage(tpcMqTag);
 		return WrapMapper.ok(new PageInfo<>(list));
 	}

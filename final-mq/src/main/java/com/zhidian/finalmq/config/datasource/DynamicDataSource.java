@@ -1,6 +1,5 @@
 package com.zhidian.finalmq.config.datasource;
 
-import com.zhidian.cloud.common.core.db.advice.DataSourceSwitcher;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 /**

@@ -1,6 +1,5 @@
 package com.zhidian.finalmq.config.datasource;
 
-import com.zhidian.cloud.common.core.db.advice.DataSourceAdvice;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -13,7 +12,7 @@ import javax.sql.DataSource;
  */
 public class DynamicDataSourceTransactionManager extends DataSourceTransactionManager {
 
-    private static Logger log = LoggerFactory.getLogger(DataSourceAdvice.class);
+    private static Logger log = LoggerFactory.getLogger(DynamicDataSourceTransactionManager.class);
 
     public DynamicDataSourceTransactionManager(DataSource dataSource) {
         super(dataSource);

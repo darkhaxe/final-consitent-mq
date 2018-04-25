@@ -2,7 +2,7 @@ package com.zhidian.finalmq.listener;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.base.Charsets;
-import com.zhidian.finalmq.base.GlobalConstant;
+import com.zhidian.finalmq.base.dto.GlobalConstant;
 import com.zhidian.finalmq.base.dto.ReliableMessageRegisterDto;
 import com.zhidian.finalmq.exceptions.RegExceptionHandler;
 import com.zhidian.finalmq.service.MqProducerBeanFactory;

@@ -1,5 +1,6 @@
 package com.zhidian.finalmq.base;
 
+import com.zhidian.finalmq.base.dto.GlobalConstant;
 import com.zhidian.finalmq.base.dto.LoginAuthDto;
 import com.zhidian.finalmq.base.util.PublicUtil;
 import com.zhidian.finalmq.base.util.ThreadLocalMap;

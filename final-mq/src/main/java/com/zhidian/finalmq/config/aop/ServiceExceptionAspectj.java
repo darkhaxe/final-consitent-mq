@@ -1,5 +1,6 @@
 package com.zhidian.finalmq.config.aop;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.zhidian.cloud.common.config.mail.EmailConfiguration;
 import com.zhidian.cloud.common.exception.BusinessException;
@@ -7,6 +8,7 @@ import com.zhidian.cloud.common.model.bo.MailBodyVo;
 import com.zhidian.cloud.common.utils.aop.AbstractAspectj;
 import com.zhidian.cloud.common.utils.http.IpUtil;
 import com.zhidian.cloud.common.utils.time.DateTimeUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
@@ -27,12 +29,13 @@ import java.util.Enumeration;
  * 创建时间：2017/05/17 0008
  * 必要描述:
  */
+@Slf4j
 @Aspect
 @Component
 public class ServiceExceptionAspectj extends AbstractAspectj {
 
-    @Autowired
-    private EmailConfiguration emailConfiguration;
+    //    @Autowired
+//    private EmailConfiguration emailConfiguration;
     //收件地址list
     @Value("${failure_process_email_address}")
     private String[] receiveAddressList;
@@ -45,7 +48,7 @@ public class ServiceExceptionAspectj extends AbstractAspectj {
      * 在方法出现异常时会执行的代码
      * 可以访问到异常对象，可以指定在出现特定异常时在执行通知代码
      */
-    @AfterThrowing(value = "execution(* com.zhidian.order.service..*(..))", throwing = "ex")
+    @AfterThrowing(value = "execution(* com.zhidian.finalmq.service..*(..))", throwing = "ex")
     public void afterThrowing(JoinPoint joinPoint, Exception ex) {
         if (verifyExceptionType(ex)) {
             HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
@@ -63,7 +66,8 @@ public class ServiceExceptionAspectj extends AbstractAspectj {
             body.addAllTo(Arrays.asList(receiveAddressList));
             body.setTitle(convertEnvDesc(appEnv) + mailTitle + (ex.getMessage() == null ? "" : ex.getMessage()));
             body.setContent(content.toString());
-            emailConfiguration.newEmailService().sendTextMail(body);
+            log.info(JSON.toJSONString(body));
+//            emailConfiguration.newEmailService().sendTextMail(body);
         }
     }
 

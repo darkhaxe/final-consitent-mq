@@ -41,7 +41,7 @@ public class WebLogAspect {
      * ~ 第五个 * 任意方法
      * ~ .. 匹配任意数量的参数.
      */
-    @Pointcut("execution(public * com.zhidian..controller..*(..))")
+    @Pointcut("execution(public * com.zhidian..web..*(..))")
     public void webLog() {
     }
 

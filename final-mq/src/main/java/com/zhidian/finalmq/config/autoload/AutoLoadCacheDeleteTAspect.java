@@ -23,7 +23,7 @@ public class AutoLoadCacheDeleteTAspect {
     /**
      * 拦截带@CacheDeleteTransactional注解的方法
      */
-    @Pointcut("execution(* com.zhidian.order.service..*.*(..)) && @annotation(cacheDeleteTransactional)")
+    @Pointcut("execution(* com.zhidian.finalmq.service..*.*(..)) && @annotation(cacheDeleteTransactional)")
     public void aspect(CacheDeleteTransactional cacheDeleteTransactional) {
     }
 

@@ -1,7 +1,7 @@
 package com.zhidian.finalmq.mq;
 
 
-import com.zhidian.finalmq.base.GlobalConstant;
+import com.zhidian.finalmq.base.dto.GlobalConstant;
 import com.zhidian.finalmq.enums.ErrorCodeEnum;
 import com.zhidian.finalmq.exceptions.TpcBizException;
 import com.zhidian.finalmq.model.dto.MqMessage;

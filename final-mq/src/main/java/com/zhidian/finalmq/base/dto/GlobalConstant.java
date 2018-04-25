@@ -1,4 +1,4 @@
-package com.zhidian.finalmq.base;
+package com.zhidian.finalmq.base.dto;
 
 /**
  * The class Global constant.

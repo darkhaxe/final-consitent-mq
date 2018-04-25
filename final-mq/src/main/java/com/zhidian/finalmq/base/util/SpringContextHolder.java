@@ -1,4 +1,4 @@
-package com.zhidian.finalmq.base;
+package com.zhidian.finalmq.base.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;

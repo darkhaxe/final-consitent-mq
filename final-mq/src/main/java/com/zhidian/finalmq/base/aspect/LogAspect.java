@@ -1,6 +1,7 @@
 package com.zhidian.finalmq.base.aspect;
 
 
+import com.alibaba.fastjson.JSON;
 import com.zhidian.finalmq.base.annotation.LogAnnotation;
 import com.zhidian.finalmq.base.dto.LoginAuthDto;
 import com.zhidian.finalmq.base.dto.OperationLogDto;
@@ -17,7 +18,6 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -36,10 +36,11 @@ public class LogAspect {
 
     private static final int MAX_SIZE = 2000;
     private ThreadLocal<Date> threadLocal = new ThreadLocal<>();
-    @Resource
-    private RestTemplate restTemplate;
-    @Resource
-    private TaskExecutor taskExecutor;
+    //    @Resource
+//    private RestTemplate restTemplate;
+//    @Resource
+//    private TaskExecutor taskExecutor;
+
 
     /**
      * 是否存在注解, 如果存在就记录日志
@@ -136,7 +137,8 @@ public class LogAspect {
 
             getControllerMethodDescription(relog, operationLogDto, result, joinPoint);
             threadLocal.remove();
-            taskExecutor.execute(() -> this.restTemplate.postForObject("http://paascloud-provider-uac/auth/saveLog", operationLogDto, Integer.class));
+            log.info(JSON.toJSONString(operationLogDto));
+//            taskExecutor.execute(() -> this.restTemplate.postForObject("http://paascloud-provider-uac/auth/saveLog", operationLogDto, Integer.class));
         } catch (Exception ex) {
             log.error("获取注解类出现异常={}", ex.getMessage(), ex);
         }

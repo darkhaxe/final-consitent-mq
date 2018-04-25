@@ -8,7 +8,7 @@
     <!-- 定义日志文件名称 --> 
     <property name="APP_NAME" value="${spring.application.name:-undefined}"/>
 
-    <property name="DAILY_FILE_PATH" value="/usr/zhidian/order-manage/log/${APP_NAME}"/>
+    <property name="DAILY_FILE_PATH" value="/Users/darkhaze/Desktop/finalmq/logs/${APP_NAME}"/>
 
     <appender name="DAILY_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>

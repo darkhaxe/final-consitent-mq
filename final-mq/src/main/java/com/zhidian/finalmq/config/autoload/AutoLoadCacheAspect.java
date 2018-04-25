@@ -23,7 +23,7 @@ public class AutoLoadCacheAspect {
     /**
      * 如果@Cache不是用在接口中，可以按下面方法来配置
      */
-    @Pointcut("execution(public !void com.zhidian.order.service..*.*(..)) && @annotation(cache)")
+    @Pointcut("execution(public !void com.zhidian.finalmq.service..*.*(..)) && @annotation(cache)")
     public void aspect(Cache cache) {
     }
 
@@ -33,7 +33,7 @@ public class AutoLoadCacheAspect {
     }
 
 
-    @Pointcut("execution(* com.zhidian.order.dao.mapper*..*.*(..))")
+    @Pointcut("execution(* com.zhidian.finalmq.mapper*..*.*(..))")
     public void mapper() {
     }
 

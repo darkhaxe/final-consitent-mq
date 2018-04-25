@@ -7,6 +7,7 @@ import com.zhidian.finalmq.model.vo.TpcMqConsumerVo;
 import com.zhidian.finalmq.model.vo.TpcMqSubscribeVo;
 import com.zhidian.finalmq.service.BaseService;
 import com.zhidian.finalmq.service.TpcMqConsumerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,8 +22,8 @@ import java.util.List;
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class TpcMqConsumerServiceImpl extends BaseService<TpcMqConsumer> implements TpcMqConsumerService {
-	@Resource
-	private TpcMqConsumerMapper tpcMqConsumerMapper;
+    @Autowired
+    private TpcMqConsumerMapper tpcMqConsumerMapper;
 
 	@Override
 	public List<TpcMqConsumerVo> listConsumerVoWithPage(TpcMqConsumer tpcMqConsumer) {

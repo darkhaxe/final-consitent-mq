@@ -1,6 +1,6 @@
 package com.zhidian.finalmq.sdk.model.domain;
 
-import com.paascloud.provider.model.dto.TpcMqMessageDto;
+import com.zhidian.finalmq.model.dto.TpcMqMessageDto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

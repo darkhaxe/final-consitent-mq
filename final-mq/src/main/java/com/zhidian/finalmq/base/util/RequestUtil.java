@@ -1,6 +1,6 @@
 package com.zhidian.finalmq.base.util;
 
-import com.zhidian.finalmq.base.GlobalConstant;
+import com.zhidian.finalmq.base.dto.GlobalConstant;
 import com.zhidian.finalmq.base.dto.LoginAuthDto;
 import com.zhidian.finalmq.enums.ErrorCodeEnum;
 import com.zhidian.finalmq.exceptions.BusinessException;

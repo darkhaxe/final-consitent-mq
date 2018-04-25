@@ -1,7 +1,7 @@
 package com.zhidian.finalmq.service;
 
 import com.google.common.base.Preconditions;
-import com.zhidian.finalmq.base.SpringContextHolder;
+import com.zhidian.finalmq.base.util.SpringContextHolder;
 import com.zhidian.finalmq.base.dto.ReliableMessageRegisterDto;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;

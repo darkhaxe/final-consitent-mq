@@ -23,11 +23,11 @@ public class DataSourceAdvice implements MethodBeforeAdvice, AfterReturningAdvic
     @Override
     public void before(Method method, Object[] arg1, Object arg2)
             throws Throwable {
-//        if (p.matcher(method.getName()).matches()) {
-//            DataSourceSwitcher.setSlave();
-//        } else {
+        if (p.matcher(method.getName()).matches()) {
+            DataSourceSwitcher.setSlave();
+        } else {
             DataSourceSwitcher.setMaster();
-//        }
+        }
     }
 
     @Override

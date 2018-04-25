@@ -7,7 +7,7 @@ package com.zhidian.finalmq.config.datasource;
  */
 public class DataSourceSwitcher {
     @SuppressWarnings("rawtypes")
-    private static final ThreadLocal contextHolder = new ThreadLocal();
+    private static volatile ThreadLocal contextHolder = new ThreadLocal();
 
     public static void setMaster() {
         clearDataSource();

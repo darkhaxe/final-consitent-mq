@@ -25,7 +25,7 @@ public class AutoLoadCacheDeleteAspect {
     /**
      * 如果@Cache不是用在接口中，可以按下面方法来配置
      */
-    @Pointcut("execution(* com.zhidian.order.service..*.*(..)) && @annotation(cacheDelete)")
+    @Pointcut("execution(* com.zhidian.finalmq.service..*.*(..)) && @annotation(cacheDelete)")
     public void cacheDeleteAspect(CacheDelete cacheDelete) {
     }
 
@@ -35,7 +35,7 @@ public class AutoLoadCacheDeleteAspect {
     }
 
 
-    @Pointcut("execution(* com.zhidian.order.dao.mapper*..*.*(..))")
+    @Pointcut("execution(* com.zhidian.finalmq.mapper*..*.*(..))")
     public void mapper() {
     }
 

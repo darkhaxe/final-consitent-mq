@@ -71,6 +71,11 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.zhidian</groupId>
+            <artifactId>final-mq</artifactId>
+            <version>0.0.1</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

@@ -1,10 +1,10 @@
 package com.zhidian.finalmq.config.mybatis;
 
 import com.github.pagehelper.PageHelper;
-import com.zhidian.cloud.common.config.mybatis.conf.MybatisProperties;
 import com.zhidian.finalmq.config.datasource.DynamicDataSource;
 import org.apache.ibatis.plugin.Interceptor;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.boot.autoconfigure.MybatisProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
@@ -26,7 +26,8 @@ public class MybatisConfiguration {
 
 
     @Bean//手动注册一个SqlSessionFactory
-    public SqlSessionFactoryBean sqlSessionFactoryBean(DynamicDataSource dataSource, MybatisProperties properties) {
+    public SqlSessionFactoryBean sqlSessionFactoryBean(DynamicDataSource dataSource,
+                                                       MybatisProperties properties) {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         bean.setTypeAliasesPackage(properties.getTypeAliasesPackage());
