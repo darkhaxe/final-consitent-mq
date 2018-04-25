@@ -100,21 +100,6 @@
             <version>${cloud.common.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.zhidian.cloud</groupId>
-            <artifactId>cloud-common-core</artifactId>
-            <version>${cloud.common.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zhidian.cloud</groupId>
-            <artifactId>cloud-common-utils</artifactId>
-            <version>${cloud.common.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zhidian.cloud</groupId>
-            <artifactId>cloud-common-model</artifactId>
-            <version>${cloud.common.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.10</version>
